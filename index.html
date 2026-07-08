@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café Pía — Panadería, brunch y bistró francés con terraza en Loma Real, Zapopan</title>
+<meta name="description" content="Café Pía en Loma Real, Zapopan: panadería artesanal, desayunos y brunch, café, pizzas al horno de piedra y cocina de bistró francés, en una terraza arbolada. 4.4★ con 1,400+ reseñas. Reserva por WhatsApp.">
+<meta name="theme-color" content="#33422f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥐</text></svg>">
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Café Pía — Panadería, brunch y bistró francés">
+<meta property="og:description" content="Panadería, desayunos, café, pizzas y cocina de bistró francés con terraza arbolada en Loma Real, Zapopan. 4.4★ (1,400+ reseñas).">
+<meta property="og:image" content="img/ambiente.jpg">
+<meta property="og:locale" content="es_MX">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        verde:  '#33422f',
+        verde2: '#3e5138',
+        verde3: '#48603f',
+        crema:  '#f4ecd8',
+        crema2: '#ebddc0',
+        papel:  '#fdf8ec',
+        tinta:  '#2f2a1e',
+        tinta2: '#4a4231',
+        suave:  '#7c7057',
+        oro:    '#b7893f',
+        orocl:  '#cfa85c',
+        terra:  '#9a5f3a',
+      },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        body:    ['Jost', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { background:#f4ecd8; }
+  .reveal { opacity:0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity:1; transform: none; }
+  .reveal.d1 { transition-delay:.1s } .reveal.d2 { transition-delay:.2s } .reveal.d3 { transition-delay:.3s }
+  .text-oro-grad {
+    background: linear-gradient(180deg,#cfa85c 0%,#b7893f 55%,#8a5f2c 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hairline { background: linear-gradient(90deg, transparent, #b7893f, transparent); }
+  .card-soft { box-shadow: 0 18px 44px -24px rgba(47,42,30,.5), 0 0 0 1px rgba(183,137,63,.14) inset; }
+  .menu-open { max-height: 480px; }
+  .menu-closed { max-height: 0; }
+  .menu-t { transition: max-height .45s ease; overflow:hidden; }
+</style>
+</head>
+<body class="font-body text-tinta bg-crema antialiased overflow-x-hidden selection:bg-oro/30 selection:text-tinta">
+
+<!-- ===================== NAV ===================== -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <a href="#top" class="flex items-center gap-2.5 group">
+        <span class="text-2xl leading-none">🥐</span>
+        <span class="font-display text-2xl sm:text-3xl font-700 tracking-wide text-tinta leading-none">Café <span class="text-oro italic">Pía</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-500 text-tinta2 uppercase tracking-wide">
+        <a href="#cafe" class="hover:text-oro transition">El Café</a>
+        <a href="#especialidades" class="hover:text-oro transition">La Casa</a>
+        <a href="#carta" class="hover:text-oro transition">Carta</a>
+        <a href="#ambiente" class="hover:text-oro transition">Terraza</a>
+        <a href="#ubicacion" class="hover:text-oro transition">Ubicación</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#reservar" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-verde text-crema font-500 text-sm px-4 py-2 hover:bg-verde2 transition shadow-lg shadow-verde/20">
+          Reservar
+        </a>
+        <button id="hamb" aria-label="Menú" class="md:hidden text-tinta p-2 -mr-2">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobmenu" class="menu-t menu-closed md:hidden bg-papel/98 backdrop-blur border-t border-oro/15">
+    <nav class="px-6 py-4 flex flex-col gap-1 text-tinta2 font-500 uppercase tracking-wide">
+      <a href="#cafe" class="py-2.5 border-b border-tinta/5 hover:text-oro">El Café</a>
+      <a href="#especialidades" class="py-2.5 border-b border-tinta/5 hover:text-oro">La Casa</a>
+      <a href="#carta" class="py-2.5 border-b border-tinta/5 hover:text-oro">Carta</a>
+      <a href="#ambiente" class="py-2.5 border-b border-tinta/5 hover:text-oro">Terraza</a>
+      <a href="#ubicacion" class="py-2.5 border-b border-tinta/5 hover:text-oro">Ubicación</a>
+      <a href="#reservar" class="mt-3 mb-1 inline-flex justify-center rounded-full bg-verde text-crema font-600 px-5 py-3">Reservar por WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="top" class="relative min-h-[100svh] flex items-end overflow-hidden">
+  <img src="img/ambiente.jpg" alt="Terraza arbolada de Café Pía" class="absolute inset-0 w-full h-full object-cover object-center">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(30,38,26,.45) 0%, rgba(30,38,26,.10) 28%, rgba(30,38,26,.30) 55%, rgba(30,38,26,.74) 80%, rgba(24,30,20,.95) 100%)"></div>
+
+  <div class="relative z-10 w-full">
+    <div class="mx-auto max-w-6xl px-5 sm:px-6 pb-14 sm:pb-20 pt-28">
+      <p class="reveal uppercase tracking-[.32em] text-orocl text-xs sm:text-sm mb-4 font-500">Loma Real · Zapopan</p>
+      <h1 class="reveal d1 font-display leading-[.92]">
+        <span class="block text-[20vw] sm:text-8xl lg:text-9xl font-700 text-crema drop-shadow-[0_3px_22px_rgba(0,0,0,.5)]">Café <span class="italic text-orocl">Pía</span></span>
+      </h1>
+      <p class="reveal d2 mt-5 max-w-xl text-lg sm:text-xl text-crema/90 leading-relaxed">
+        Panadería, brunch y <span class="text-orocl font-500">cocina de bistró francés</span> — desayunos, café, pizzas al horno de piedra y una terraza arbolada para quedarse.
+      </p>
+
+      <div class="reveal d3 mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-crema/85 uppercase tracking-wide font-500">
+        <span class="inline-flex items-center gap-1.5"><span class="text-orocl">★</span> 4.4 · 1,400+ reseñas</span>
+        <span class="w-1 h-1 rounded-full bg-orocl/60"></span>
+        <span>Bistró &amp; panadería</span>
+        <span class="w-1 h-1 rounded-full bg-orocl/60"></span>
+        <span>Terraza · desayuno a cena</span>
+      </div>
+
+      <div class="reveal d3 mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+        <a href="#reservar" class="inline-flex items-center justify-center gap-2 rounded-full bg-oro text-tinta font-600 text-base px-7 py-4 hover:bg-orocl transition shadow-xl shadow-black/25">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.12.55 4.19 1.6 6.02L4 29l8.13-1.55a12 12 0 0 0 3.9.65h.01C22.68 28.1 28 22.7 28 16.06 28 9.42 22.68 3 16.04 3Zm0 21.9c-1.2 0-2.38-.2-3.5-.6l-.25-.1-4.83.92.98-4.7-.16-.24a9.9 9.9 0 0 1-1.52-5.24c0-5.5 4.48-9.98 10-9.98 5.5 0 9.96 4.48 9.96 9.98 0 5.5-4.47 9.96-9.96 9.96Zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg>
+          Reservar por WhatsApp
+        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Caf%C3%A9%20Pia%2C%20Av%20Naciones%20Unidas%206780%2C%20Loma%20Real%2C%20Zapopan&destination_place_id=ChIJR6f09G2vKIQRu1iyVWDucNM" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 rounded-full border border-crema/45 text-crema font-500 text-base px-7 py-4 hover:bg-crema/10 hover:border-crema transition backdrop-blur-sm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Cómo llegar
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FRANJA ===================== -->
+<section class="relative bg-verde text-crema">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-5">
+    <ul class="flex flex-wrap justify-center gap-x-7 gap-y-3 text-center text-sm sm:text-base font-500 text-crema/85 uppercase tracking-wide">
+      <li class="inline-flex items-center gap-2 reveal"><span>🥐</span> Panadería</li>
+      <li class="inline-flex items-center gap-2 reveal d1"><span>🍳</span> Desayunos &amp; brunch</li>
+      <li class="inline-flex items-center gap-2 reveal d1"><span>☕</span> Café &amp; matcha</li>
+      <li class="inline-flex items-center gap-2 reveal d2"><span>🍕</span> Pizzas al horno</li>
+      <li class="inline-flex items-center gap-2 reveal d2"><span>🌿</span> Terraza</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== EL CAFÉ ===================== -->
+<section id="cafe" class="relative bg-crema overflow-hidden">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-20 sm:py-28">
+    <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div class="reveal">
+        <p class="uppercase tracking-[.28em] text-oro text-xs sm:text-sm mb-4 font-600">El Café</p>
+        <h2 class="font-display text-5xl sm:text-6xl font-600 leading-[1.02] text-tinta">Un bistró<br><span class="text-oro-grad italic">para el día entero</span></h2>
+        <div class="mt-5 h-px w-24 hairline"></div>
+        <p class="mt-6 text-lg text-tinta2/90 leading-relaxed">
+          Café Pía abre temprano con <span class="text-oro font-600">panadería</span> y desayunos, y sigue con comida de bistró francés, pizzas al horno de piedra, buen café y matcha. Todo bajo una terraza arbolada de ladrillo y madera — de esos lugares para quedarse a platicar sin prisa.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-2.5 uppercase tracking-wide text-xs font-600">
+          <span class="rounded-full border border-oro/25 bg-oro/5 px-4 py-1.5 text-tinta2">Terraza arbolada</span>
+          <span class="rounded-full border border-oro/25 bg-oro/5 px-4 py-1.5 text-tinta2">Panadería propia</span>
+          <span class="rounded-full border border-oro/25 bg-oro/5 px-4 py-1.5 text-tinta2">Desayuno a cena</span>
+        </div>
+      </div>
+      <div class="reveal d1 relative">
+        <div class="absolute -inset-3 rounded-[2rem] bg-verde/10 blur-2xl"></div>
+        <img src="img/croque.jpg" alt="Croque Madame de Café Pía" class="relative rounded-[1.6rem] w-full h-auto card-soft">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ESPECIALIDADES ===================== -->
+<section id="especialidades" class="relative bg-crema2">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-20 sm:py-28">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="uppercase tracking-[.28em] text-oro text-xs sm:text-sm mb-4 font-600">La Casa</p>
+      <h2 class="font-display text-5xl sm:text-6xl font-600 text-tinta leading-tight">Lo que se<br class="sm:hidden"> disfruta aquí</h2>
+      <p class="mt-4 text-tinta2/75">De la panadería a la mesa, con buen café al lado.</p>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+      <article class="reveal group rounded-2xl overflow-hidden bg-papel card-soft">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="img/pan-frances.jpg" alt="Pan francés de la panadería" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-2xl font-600 text-oro">Panadería</h3>
+          <p class="mt-1.5 text-sm text-tinta2/75 leading-relaxed">Pan francés, croissants y pan dulce de la casa, recién horneados.</p>
+        </div>
+      </article>
+      <article class="reveal d1 group rounded-2xl overflow-hidden bg-papel card-soft">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="img/croque.jpg" alt="Croque Madame" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-2xl font-600 text-oro">Desayunos</h3>
+          <p class="mt-1.5 text-sm text-tinta2/75 leading-relaxed">Croque madame, chilaquiles, huevos con chistorra y toast de salmón.</p>
+        </div>
+      </article>
+      <article class="reveal d2 group rounded-2xl overflow-hidden bg-papel card-soft">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="img/capuchino.jpg" alt="Capuchino y café" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-2xl font-600 text-oro">Café &amp; matcha</h3>
+          <p class="mt-1.5 text-sm text-tinta2/75 leading-relaxed">Capuchino, café de olla, matcha y jugos de la casa recién hechos.</p>
+        </div>
+      </article>
+      <article class="reveal d3 group rounded-2xl overflow-hidden bg-papel card-soft">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="img/comida.jpg" alt="Cocina de bistró de Café Pía" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-2xl font-600 text-oro">Comida &amp; pizzas</h3>
+          <p class="mt-1.5 text-sm text-tinta2/75 leading-relaxed">Charcutería, cortes, salmón y pizzas al horno de piedra.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CARTA / PRECIOS ===================== -->
+<section id="carta" class="relative bg-crema overflow-hidden">
+  <div class="mx-auto max-w-5xl px-5 sm:px-6 py-20 sm:py-28">
+    <div class="text-center reveal">
+      <p class="uppercase tracking-[.28em] text-oro text-xs sm:text-sm mb-4 font-600">La Carta</p>
+      <h2 class="font-display text-5xl sm:text-6xl font-600 text-tinta">Para <span class="text-oro-grad italic">todo el día</span></h2>
+      <p class="mt-4 text-tinta2/75">Una probadita. Pide la carta completa en el lugar.</p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-6 sm:gap-8">
+      <!-- Desayunos -->
+      <div class="reveal rounded-2xl bg-papel p-6 sm:p-7 card-soft">
+        <h3 class="font-display text-3xl font-600 text-terra mb-1">Desayunos</h3>
+        <div class="h-px w-full hairline opacity-60 mb-4"></div>
+        <ul class="space-y-3 text-[15px]">
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Croque Madame</span><span class="text-oro font-600">$170</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Croque Monsieur</span><span class="text-oro font-600">$165</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Pan francés de la casa</span><span class="text-oro font-600">$130</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Toast de salmón ahumado</span><span class="text-oro font-600">$130</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Chilaquiles rojos</span><span class="text-oro font-600">$110</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Huevos con chistorra</span><span class="text-oro font-600">$110</span></li>
+        </ul>
+      </div>
+      <!-- Comida -->
+      <div class="reveal d1 rounded-2xl bg-papel p-6 sm:p-7 card-soft">
+        <h3 class="font-display text-3xl font-600 text-terra mb-1">Comida</h3>
+        <div class="h-px w-full hairline opacity-60 mb-4"></div>
+        <ul class="space-y-3 text-[15px]">
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Tabla de quesos y carnes</span><span class="text-oro font-600">$365</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Pulpo al centro</span><span class="text-oro font-600">$290</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Salmón con ensalada</span><span class="text-oro font-600">$295</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Burger de Rib Eye</span><span class="text-oro font-600">$210</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Charcutería</span><span class="text-oro font-600">$190</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Pizzas al horno de piedra</span><span class="text-oro font-600">$165–190</span></li>
+        </ul>
+      </div>
+      <!-- Bebidas -->
+      <div class="reveal d2 rounded-2xl bg-papel p-6 sm:p-7 card-soft">
+        <h3 class="font-display text-3xl font-600 text-terra mb-1">Bebidas</h3>
+        <div class="h-px w-full hairline opacity-60 mb-4"></div>
+        <ul class="space-y-3 text-[15px]">
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Jugos de la casa</span><span class="text-oro font-600">$45–55</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Aguas frescas</span><span class="text-oro font-600">$40</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Café de olla · americano</span><span class="text-oro font-600">consulta</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Capuchino · latte</span><span class="text-oro font-600">consulta</span></li>
+          <li class="flex justify-between gap-3"><span class="text-tinta2">Matcha &amp; especialidad</span><span class="text-oro font-600">consulta</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-8 text-center text-sm text-suave/80">Precios de referencia. Consulta entradas, sopas, fuertes y la panadería del día en el lugar.</p>
+  </div>
+</section>
+
+<!-- ===================== AMBIENTE / GALERIA ===================== -->
+<section id="ambiente" class="relative bg-crema2">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-20 sm:py-28">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="uppercase tracking-[.28em] text-oro text-xs sm:text-sm mb-4 font-600">La Terraza</p>
+      <h2 class="font-display text-5xl sm:text-6xl font-600 text-tinta leading-tight">Ladrillo, plantas<br><span class="text-oro-grad italic">y buena mesa</span></h2>
+    </div>
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div class="reveal col-span-2 row-span-2 rounded-2xl overflow-hidden card-soft">
+        <img src="img/ambiente.jpg" alt="Terraza arbolada de Café Pía" class="w-full h-full object-cover min-h-[260px]">
+      </div>
+      <div class="reveal d1 rounded-2xl overflow-hidden card-soft">
+        <img src="img/croque.jpg" alt="Croque madame" class="w-full h-full object-cover min-h-[125px]">
+      </div>
+      <div class="reveal d1 rounded-2xl overflow-hidden card-soft">
+        <img src="img/tostada-francesa.jpg" alt="Tostada francesa" class="w-full h-full object-cover min-h-[125px]">
+      </div>
+      <div class="reveal d2 rounded-2xl overflow-hidden card-soft">
+        <img src="img/capuchino.jpg" alt="Capuchino" class="w-full h-full object-cover min-h-[125px]">
+      </div>
+      <div class="reveal d2 rounded-2xl overflow-hidden card-soft">
+        <img src="img/comida.jpg" alt="Platillo de bistró" class="w-full h-full object-cover min-h-[125px]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESEÑAS ===================== -->
+<section class="relative bg-crema overflow-hidden">
+  <div class="mx-auto max-w-5xl px-5 sm:px-6 py-20 sm:py-24">
+    <div class="text-center reveal">
+      <div class="inline-flex items-center gap-3 rounded-full border border-oro/25 bg-papel px-5 py-2 card-soft">
+        <span class="text-oro text-lg tracking-tight">★★★★<span class="text-oro/40">★</span></span>
+        <span class="font-500 text-sm text-tinta2">4.4 · 1,400+ reseñas en Google</span>
+      </div>
+    </div>
+    <div class="mt-12 grid md:grid-cols-2 gap-5 sm:gap-6">
+      <figure class="reveal rounded-2xl bg-papel p-6 sm:p-7 card-soft">
+        <div class="text-oro mb-3">★★★★★</div>
+        <blockquote class="text-tinta2/90 leading-relaxed text-lg">"He visitado el lugar en repetidas ocasiones y siempre destacaré su panadería. Recomendado."</blockquote>
+        <figcaption class="mt-4 font-500 text-sm text-suave">— Reseña de Google</figcaption>
+      </figure>
+      <figure class="reveal d1 rounded-2xl bg-papel p-6 sm:p-7 card-soft">
+        <div class="text-oro mb-3">★★★★★</div>
+        <blockquote class="text-tinta2/90 leading-relaxed text-lg">"Las porciones son grandes y de buen sabor. Mi favorito fue el matcha, ¡100/10!"</blockquote>
+        <figcaption class="mt-4 font-500 text-sm text-suave">— Reseña de Google</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESERVAR ===================== -->
+<section id="reservar" class="relative bg-verde text-crema">
+  <div class="mx-auto max-w-5xl px-5 sm:px-6 py-20 sm:py-28">
+    <div class="grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div class="reveal">
+        <p class="uppercase tracking-[.28em] text-orocl text-xs sm:text-sm mb-4 font-500">Reserva tu mesa</p>
+        <h2 class="font-display text-5xl sm:text-6xl font-600 leading-[1.02]">Te guardamos<br><span class="italic text-orocl">lugar en la terraza</span></h2>
+        <p class="mt-6 text-lg text-crema/85 leading-relaxed">Llena los datos y te mandamos el mensaje ya listo por WhatsApp. Te confirmamos en un momento — ideal para el brunch del fin o una comida sin prisa.</p>
+        <div class="mt-6 space-y-2 text-crema/85">
+          <p class="flex items-center gap-3"><span class="text-orocl">🕗</span> Lun a jue 9:00–24:00 · Vie y sáb 8:30–24:00 · Dom 8:30–17:00</p>
+          <p class="flex items-center gap-3"><span class="text-orocl">📞</span> <a href="tel:+523336509447" class="hover:text-orocl transition">33 3650 9447</a></p>
+        </div>
+      </div>
+
+      <form id="form-reserva" class="reveal d1 rounded-2xl bg-papel text-tinta p-6 sm:p-7 shadow-2xl shadow-black/30 space-y-4">
+        <div>
+          <label class="block uppercase tracking-wide text-xs text-suave mb-1.5 font-600" for="r-nombre">Nombre</label>
+          <input id="r-nombre" type="text" required placeholder="Tu nombre"
+                 class="w-full rounded-xl bg-crema border border-tinta/10 focus:border-verde focus:ring-1 focus:ring-verde outline-none px-4 py-3 text-tinta placeholder:text-suave/40">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block uppercase tracking-wide text-xs text-suave mb-1.5 font-600" for="r-fecha">Fecha</label>
+            <input id="r-fecha" type="date" required
+                   class="w-full rounded-xl bg-crema border border-tinta/10 focus:border-verde focus:ring-1 focus:ring-verde outline-none px-4 py-3 text-tinta">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wide text-xs text-suave mb-1.5 font-600" for="r-hora">Hora</label>
+            <input id="r-hora" type="time" required
+                   class="w-full rounded-xl bg-crema border border-tinta/10 focus:border-verde focus:ring-1 focus:ring-verde outline-none px-4 py-3 text-tinta">
+          </div>
+        </div>
+        <div>
+          <label class="block uppercase tracking-wide text-xs text-suave mb-1.5 font-600" for="r-personas">Personas</label>
+          <select id="r-personas" required
+                  class="w-full rounded-xl bg-crema border border-tinta/10 focus:border-verde focus:ring-1 focus:ring-verde outline-none px-4 py-3 text-tinta">
+            <option value="" disabled selected>¿Cuántos van?</option>
+            <option>1 a 2</option><option>3 a 4</option><option>5 a 6</option><option>7 a 10</option><option>Más de 10</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-verde text-crema font-600 text-base px-6 py-4 hover:bg-verde2 transition shadow-lg shadow-verde/25">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.12.55 4.19 1.6 6.02L4 29l8.13-1.55a12 12 0 0 0 3.9.65h.01C22.68 28.1 28 22.7 28 16.06 28 9.42 22.68 3 16.04 3Zm0 21.9c-1.2 0-2.38-.2-3.5-.6l-.25-.1-4.83.92.98-4.7-.16-.24a9.9 9.9 0 0 1-1.52-5.24c0-5.5 4.48-9.98 10-9.98 5.5 0 9.96 4.48 9.96 9.98 0 5.5-4.47 9.96-9.96 9.96Zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg>
+          Enviar por WhatsApp
+        </button>
+        <p class="text-center text-xs text-suave/60">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== UBICACION / HORARIO ===================== -->
+<section id="ubicacion" class="relative bg-crema">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-20 sm:py-28">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+      <div class="reveal">
+        <p class="uppercase tracking-[.28em] text-oro text-xs sm:text-sm mb-4 font-600">Dónde y cuándo</p>
+        <h2 class="font-display text-5xl sm:text-6xl font-600 text-tinta leading-[1.02]">Nos vemos en<br><span class="text-oro-grad italic">Loma Real</span></h2>
+
+        <div class="mt-7 flex items-start gap-3 text-tinta2">
+          <span class="text-oro mt-1">📍</span>
+          <p>Av. Naciones Unidas 6780, Local 4, Loma Real,<br>45129 Zapopan, Jalisco.</p>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="uppercase tracking-wide text-sm text-oro mb-3 font-600">Horario</h3>
+          <ul class="text-tinta2 text-[15px] divide-y divide-tinta/8 max-w-sm">
+            <li class="flex justify-between py-2"><span>Lunes a jueves</span><span class="text-suave">9:00 am – 12:00 am</span></li>
+            <li class="flex justify-between py-2"><span>Viernes y sábado</span><span class="text-suave">8:30 am – 12:00 am</span></li>
+            <li class="flex justify-between py-2"><span>Domingo</span><span class="text-suave">8:30 am – 5:00 pm</span></li>
+          </ul>
+        </div>
+
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Caf%C3%A9%20Pia%2C%20Av%20Naciones%20Unidas%206780%2C%20Loma%20Real%2C%20Zapopan&destination_place_id=ChIJR6f09G2vKIQRu1iyVWDucNM" target="_blank" rel="noopener"
+           class="mt-8 inline-flex items-center gap-2 rounded-full bg-oro text-tinta font-600 px-6 py-3.5 hover:bg-orocl transition shadow-lg shadow-black/20">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Cómo llegar
+        </a>
+      </div>
+
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Caf%C3%A9%20Pia%2C%20Av%20Naciones%20Unidas%206780%2C%20Loma%20Real%2C%20Zapopan&destination_place_id=ChIJR6f09G2vKIQRu1iyVWDucNM" target="_blank" rel="noopener"
+         class="reveal d1 group relative block rounded-2xl overflow-hidden card-soft min-h-[320px] lg:min-h-full">
+        <img src="img/mapa.jpg" alt="Ubicación de Café Pía en el mapa — Loma Real, Zapopan" class="w-full h-full object-cover min-h-[320px] group-hover:scale-[1.03] transition duration-700">
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(30,38,26,.12) 0%, transparent 32%, transparent 60%, rgba(30,38,26,.82) 100%)"></div>
+        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3">
+          <span class="inline-flex items-center gap-2 text-sm font-500 text-white drop-shadow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#cfa85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Café Pía
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-oro text-tinta font-600 text-xs uppercase tracking-wide px-3.5 py-2 group-hover:bg-orocl transition shadow-lg">Ver en Maps</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="relative bg-verde text-crema border-t border-oro/20">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-12">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-8">
+      <div>
+        <div class="flex items-center gap-2.5">
+          <span class="text-2xl">🥐</span>
+          <span class="font-display text-3xl font-700 text-crema">Café <span class="text-orocl italic">Pía</span></span>
+        </div>
+        <p class="mt-4 text-crema/70 text-sm max-w-xs leading-relaxed">Panadería, brunch y cocina de bistró francés con terraza, en Loma Real, Zapopan.</p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="https://wa.me/523336509447" target="_blank" rel="noopener" class="inline-flex items-center gap-2.5 text-crema hover:text-orocl transition">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.12.55 4.19 1.6 6.02L4 29l8.13-1.55a12 12 0 0 0 3.9.65h.01C22.68 28.1 28 22.7 28 16.06 28 9.42 22.68 3 16.04 3Zm0 21.9c-1.2 0-2.38-.2-3.5-.6l-.25-.1-4.83.92.98-4.7-.16-.24a9.9 9.9 0 0 1-1.52-5.24c0-5.5 4.48-9.98 10-9.98 5.5 0 9.96 4.48 9.96 9.98 0 5.5-4.47 9.96-9.96 9.96Zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg>
+          WhatsApp · 33 3650 9447
+        </a>
+        <a href="tel:+523336509447" class="inline-flex items-center gap-2.5 text-crema hover:text-orocl transition">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Llamar
+        </a>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-crema/10 flex flex-col sm:flex-row justify-between gap-2 text-xs text-crema/55">
+      <p>© <span id="year"></span> Café Pía · Loma Real, Zapopan, Jalisco.</p>
+      <p>Panadería &amp; bistró desde 2021.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== WHATSAPP FLOTANTE ===================== -->
+<a href="https://wa.me/523336509447" target="_blank" rel="noopener" aria-label="WhatsApp"
+   class="fixed bottom-5 right-5 z-50 inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl shadow-black/40 hover:scale-105 transition">
+  <svg width="30" height="30" viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.12.55 4.19 1.6 6.02L4 29l8.13-1.55a12 12 0 0 0 3.9.65h.01C22.68 28.1 28 22.7 28 16.06 28 9.42 22.68 3 16.04 3Zm0 21.9c-1.2 0-2.38-.2-3.5-.6l-.25-.1-4.83.92.98-4.7-.16-.24a9.9 9.9 0 0 1-1.52-5.24c0-5.5 4.48-9.98 10-9.98 5.5 0 9.96 4.48 9.96 9.98 0 5.5-4.47 9.96-9.96 9.96Zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const hamb = document.getElementById('hamb');
+  const mob = document.getElementById('mobmenu');
+  hamb.addEventListener('click', () => { mob.classList.toggle('menu-closed'); mob.classList.toggle('menu-open'); });
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mob.classList.add('menu-closed'); mob.classList.remove('menu-open'); }));
+
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 40) nav.classList.add('bg-crema/92','backdrop-blur','shadow-lg','shadow-tinta/10');
+    else nav.classList.remove('bg-crema/92','backdrop-blur','shadow-lg','shadow-tinta/10');
+  };
+  onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.getElementById('form-reserva').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById('r-nombre').value.trim();
+    const fecha = document.getElementById('r-fecha').value;
+    const hora = document.getElementById('r-hora').value;
+    const personas = document.getElementById('r-personas').value;
+    let fechaTxt = fecha;
+    try { fechaTxt = new Date(fecha + 'T00:00').toLocaleDateString('es-MX', { weekday:'long', day:'numeric', month:'long' }); } catch(_){}
+    const texto =
+      '¡Hola Café Pía! 🥐 Quiero reservar una mesa:\n\n' +
+      '👤 Nombre: ' + nombre + '\n' +
+      '📅 Fecha: ' + fechaTxt + '\n' +
+      '🕗 Hora: ' + hora + '\n' +
+      '👥 Personas: ' + personas + '\n\n' +
+      '¿Me confirman disponibilidad? ¡Gracias!';
+    window.open('https://wa.me/523336509447?text=' + encodeURIComponent(texto), '_blank');
+  });
+</script>
+</body>
+</html>
